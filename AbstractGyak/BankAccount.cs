@@ -7,16 +7,27 @@ using System.Threading.Tasks;
 
 namespace AbstractGyak
 {
-	
+
 	internal abstract class BankAccount : BankingService
 	{
 		double balance;
-		Owner owner;
-		protected BankAccount(double balance,Owner owner) : base(owner)
+
+		public double Balance { get => balance; }
+
+		protected BankAccount(double balance, Owner owner) : base(owner)
 		{
 			this.balance = balance;
-		}	
-		public double Balance { get => balance;}
+		}
+
+
+		public void Deposit(double amount)
+		{
+			balance += amount;
+		}
+
+		public abstract bool Withdraw(double amount);
+		
+
 	}
 }
 		
