@@ -12,7 +12,7 @@ namespace AbstractGyak
 	{
 		double balance;
 
-		public double Balance { get => balance; }
+		public virtual  double Balance { get; protected set;}
 
 		protected BankAccount(double balance, Owner owner) : base(owner)
 		{
