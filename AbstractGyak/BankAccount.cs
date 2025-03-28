@@ -26,6 +26,11 @@ namespace AbstractGyak
 		}
 
 		public abstract bool Withdraw(double amount);
+
+		public BankCard NewCard(string cardNumber)
+		{
+			return new BankCard(Owner, Balance, cardNumber);
+		}
 		
 
 	}

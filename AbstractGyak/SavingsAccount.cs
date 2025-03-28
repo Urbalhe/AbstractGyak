@@ -10,13 +10,14 @@ namespace AbstractGyak
 	{
 		static double baseInterest;
 
-
-		public double Interest { get; set; }
-
-		public SavingsAccount(Owner owner) : base(owner)
+		public SavingsAccount(double balance, Owner owner) : base(balance, owner)
 		{
 			Interest = baseInterest;
 		}
+
+		public double Interest { get; set; }
+
+		
 
 
 

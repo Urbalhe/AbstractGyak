@@ -11,19 +11,27 @@ namespace AbstractGyak
 
 		double creditLimit;
 
+		public CreditAccount(double balance, Owner owner) : base(balance, owner)
+		{
+
+		}
 
 		public double CreditLimit { get; }
-		public CreditAccount(Owner owner, double creditLimit) : base(owner)
-		{
-			this.creditLimit = creditLimit;
-		}
+		
 
 		public override bool Withdraw(double amount)
 		{
 			if (this.Balance - amount >= creditLimit)
 			{
 				this.Balance -= amount;
+				return true;
 			}
+			else
+			{
+				return false;
+			}
+
+			
 			
 		}
 
